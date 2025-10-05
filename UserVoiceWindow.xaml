@@ -31,7 +31,19 @@
             <Label Content="Voice provider:" Margin="0,4,0,0"/>
             <ComboBox x:Name="ProviderComboBox" materialDesign:HintAssist.Hint="Voice provider" SelectionChanged="ProviderComboBox_SelectionChanged" Margin="0,0,0,4" SelectedItem="{Binding VoiceProvider, Mode=TwoWay}"/>
             <Label Content="Voice:" Margin="0,4,0,0"/>
-            <ComboBox x:Name="VoiceNameComboBox" materialDesign:HintAssist.Hint="Voice name" Margin="0,0,0,4" SelectedItem="{Binding VoiceName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <ComboBox x:Name="VoiceNameComboBox"
+                      materialDesign:HintAssist.Hint="Voice name"
+                      Margin="0,0,0,4"
+                      SelectedItem="{Binding VoiceName, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                      VirtualizingStackPanel.IsVirtualizing="True"
+                      VirtualizingStackPanel.VirtualizationMode="Standard"
+                      ScrollViewer.CanContentScroll="True">
+                <ComboBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel/>
+                    </ItemsPanelTemplate>
+                </ComboBox.ItemsPanel>
+            </ComboBox>
             <TextBlock Text="{Binding Rate, StringFormat=Rate: {0}}"/>
             <Slider Minimum="-100" Maximum="100" Value="{Binding Rate, Mode=TwoWay}" />
             <TextBlock Text="{Binding Pitch, StringFormat=Pitch: {0}}"/>
