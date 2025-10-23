@@ -256,7 +256,7 @@ namespace TTS_Chan.Twitch
             {
                 KnownUsernames.Add(msg.Username);
             }
-
+            if (msg.Muted) return;
             if (msg.SpeakableText == "") return;
             await TtsManager.ProcessMessage(msg);
             if (msg.SpeakableText == "") return;

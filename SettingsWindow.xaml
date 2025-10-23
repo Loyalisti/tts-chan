@@ -44,6 +44,10 @@
                 <ToggleButton x:Name="TwitchEmotesToggle" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=DisableTwitchEmotes}"/>
                 <TextBlock Text="Remove twitch emotes from text"/>
             </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,2">
+                <ToggleButton x:Name="SubsriberModeToggle" Style="{StaticResource MaterialDesignSwitchToggleButton}" IsChecked="{Binding Source={x:Static properties:Settings.Default}, Path=SubscriberMode}"/>
+                <TextBlock Text="Tts only for subscribers"/>
+            </StackPanel>
             <TextBlock Text="{Binding Value, ElementName=MessageLengthSlider, StringFormat=Max message length: {0}}"/>
             <Slider x:Name="MessageLengthSlider" IsSnapToTickEnabled="True" TickFrequency="10" Minimum="0" Maximum="500" Value="{Binding Source={x:Static properties:Settings.Default}, Path=MessageSymbolLimit}"/>
             <TextBlock Text="{Binding Value, ElementName=VolumeSlider, StringFormat=Volume: {0}}"/>

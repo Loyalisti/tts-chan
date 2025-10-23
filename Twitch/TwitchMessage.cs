@@ -34,6 +34,7 @@ namespace TTS_Chan.Twitch
         public string Text { get; }
         public string Color { get; }
         public string SpeakableText;
+        public bool Muted { get; }
 
         public TwitchMessage(IrcMessageParser parser)
         {
@@ -48,11 +49,15 @@ namespace TTS_Chan.Twitch
             }
             SpeakableText = Text;
             Tags = parser.Tags;
+            if (Tags.ContainsKey("subscriber") && Tags["subscriber"] != "1" && Properties.Settings.Default.SubscriberMode)
+            {
+                Muted = true;
+            }
             Username = parser.Source.Username;
             DisplayName = Tags.ContainsKey("display-name") ? Tags["display-name"] : Username;
             Userid = Tags.ContainsKey("user-id") ? Tags["user-id"] : "UNKNOWN";
             if(Tags.ContainsKey("color") && Tags["color"] != "")
-            {
+            { 
                 Color = Tags["color"];
             }
             else

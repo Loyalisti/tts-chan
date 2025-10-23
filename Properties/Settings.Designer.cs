@@ -130,5 +130,17 @@ namespace TTS_Chan.Properties {
                 this["HotkeyClearQueue"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SubscriberMode {
+            get {
+                return ((bool)(this["SubscriberMode"]));
+            }
+            set {
+                this["SubscriberMode"] = value;
+            }
+        }
     }
 }
