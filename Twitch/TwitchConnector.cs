@@ -21,7 +21,7 @@ namespace TTS_Chan.Twitch
         public event ConnectionStatusChanged IrcStatusChanged;
 
         private const string IrcUri = "wss://irc-ws.chat.twitch.tv:443";
-        private string _loginUsername = "justinfan1337";
+        private string _loginUsername = "justinfan1338";
         private CancellationToken _cancellationToken;
         private CancellationTokenSource _cancellationSource;
         private string _joinedChannel;

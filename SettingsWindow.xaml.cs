@@ -151,6 +151,7 @@ namespace TTS_Chan
 
         private void GenerateToken_Click(object sender, RoutedEventArgs e)
         {
+            //TODO: Open webpage authentication
             MaterialMessageBox.Show("This feature is not fully implemented yet. If you have a twitch token you can input it in the token input field. Its not currently being used for anything", "Not implemented");
         }
 
